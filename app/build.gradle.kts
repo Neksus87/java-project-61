@@ -22,3 +22,6 @@ dependencies1 {
 tasks.test {
     useJUnitPlatform()
 }
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
