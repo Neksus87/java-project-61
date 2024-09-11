@@ -187,7 +187,8 @@
         <item itemvalue="Gradle.app [installDist]" />
         <item itemvalue="Gradle.app [clean]" />
         <item itemvalue="Gradle.app [run]" />
-        <item itemvalue="Makefile Target.run-dist" />
+        <item itemvalue="Gradle.app [installDist]" />
+        <item itemvalue="Gradle.app [clean]" />
       </list>
     </recent_temporary>
   </component>
