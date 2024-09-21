@@ -4,37 +4,39 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
-    private static final int MAX_NUMBER = 35;
-    private static final String[] OPERATIONS = {"+", "-", "*"};
+    public static final int MAX_NUMBER = 100;
+    public static final char[] OPERATIONS = new char[]{'+', '-', '*'};
 
-    public static void start() {
-        String instructions = "What is the result of the expression?";
-        String[][] gameData = new String[3][2];
+    public static void play() {
+        String description = "What is the result of the expression?";
+        String[][] roundsData = new String[Engine.ROUNDS][2];
         Random random = new Random();
 
-        for (int i = 0; i < 3; i++) {
-            int num1 = random.nextInt(MAX_NUMBER) + 1;
-            int num2 = random.nextInt(MAX_NUMBER) + 1;
-            String operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int number1 = random.nextInt(MAX_NUMBER);
+            int number2 = random.nextInt(MAX_NUMBER);
+            char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
+            String question = number1 + " " + operation + " " + number2;
+            String correctAnswer;
 
-            String expression = num1 + " " + operation + " " + num2;
-            gameData[i][0] = expression;
-            gameData[i][1] = String.valueOf(calculate(num1, num2, operation));
+            switch (operation) {
+                case '+':
+                    correctAnswer = String.valueOf(number1 + number2);
+                    break;
+                case '-':
+                    correctAnswer = String.valueOf(number1 - number2);
+                    break;
+                case '*':
+                    correctAnswer = String.valueOf(number1 * number2);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown operation: " + operation);
+            }
+
+            roundsData[i][0] = question;
+            roundsData[i][1] = correctAnswer;
         }
 
-        Engine.runGame("Calc", gameData, instructions);
-    }
-
-    private static int calculate(int num1, int num2, String operation) {
-        switch (operation) {
-            case "+":
-                return num1 + num2;
-            case "-":
-                return num1 - num2;
-            case "*":
-                return num1 * num2;
-            default:
-                throw new IllegalArgumentException("Unknown operation: " + operation);
-        }
+        Engine.run(description, roundsData);
     }
 }

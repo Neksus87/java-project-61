@@ -5,4 +5,6 @@
 [here](https://asciinema.org/a/QVANjkFsM88UkfnlWcmMIj2BY)
 # Project 1 step 6 demonstration
 [here](https://asciinema.org/a/kntVhWGPMGerGTFnPWvivVRPh)
+# Project 1 step 7 demonstration
+[here](https://asciinema.org/a/Q4tuNk37gCwnWkO3nY4sPnXYq)
 

@@ -4,19 +4,21 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Even {
-    private static final int MAX_NUMBER = 100;
+    public static final int MAX_NUMBER = 100;
 
-    public static void start() {
-        String instructions = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] gameData = new String[3][2];
+    public static void play() {
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] roundsData = new String[Engine.ROUNDS][2];
         Random random = new Random();
 
-        for (int i = 0; i < 3; i++) {
-            int number = random.nextInt(MAX_NUMBER) + 1;
-            gameData[i][0] = String.valueOf(number);
-            gameData[i][1] = (number % 2 == 0) ? "yes" : "no";
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int number = random.nextInt(MAX_NUMBER);
+            String question = String.valueOf(number);
+            String correctAnswer = (number % 2 == 0) ? "yes" : "no";
+            roundsData[i][0] = question;
+            roundsData[i][1] = correctAnswer;
         }
 
-        Engine.runGame("Even", gameData, instructions);
+        Engine.run(description, roundsData);
     }
 }
