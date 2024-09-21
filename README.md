@@ -7,4 +7,8 @@
 [here](https://asciinema.org/a/kntVhWGPMGerGTFnPWvivVRPh)
 # Project 1 step 7 demonstration
 [here](https://asciinema.org/a/Q4tuNk37gCwnWkO3nY4sPnXYq)
+# Project 1 step 8 demonstration
+[here](https://asciinema.org/a/sUGwqkthJKaR6Jm2OQqCN4AWA)
+# Project 1 step 9 demonstration
+[here](https://asciinema.org/a/qm8Fo8w4JOtoLEnomcYlJPn6d)
 

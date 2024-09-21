@@ -23,7 +23,7 @@ public class Engine {
             String playerAnswer = scanner.next();
 
             if (!playerAnswer.equals(correctAnswer)) {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", playerAnswer, correctAnswer);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", playerAnswer, correctAnswer);
                 System.out.println("Let's try again, " + playerName + "!");
                 return;
             }
