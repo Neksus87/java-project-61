@@ -4,8 +4,12 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
+
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
+    private static final int MAX_START = 10;
+    private static final int MAX_STEP = 5;
+    private static final int MIN_STEP = 1;
 
     // Логика определения верного ответа вынесена в отдельный метод
     private static int calculateMissingValue(int start, int step, int missingIndex) {
@@ -20,8 +24,8 @@ public class Progression {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-            int start = random.nextInt(10);
-            int step = random.nextInt(5) + 1;
+            int start = random.nextInt(MAX_START);
+            int step = random.nextInt(MAX_STEP) + MIN_STEP;
             int missingIndex = random.nextInt(length);
 
             StringBuilder progression = new StringBuilder();
