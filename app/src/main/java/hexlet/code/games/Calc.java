@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
-    public static final int MAX_NUMBER = 100;
-    public static final char[] OPERATIONS = new char[]{'+', '-', '*'};
+    private static final int MAX_NUMBER = 100;
+    private static final char[] OPERATIONS = new char[]{'+', '-', '*'};
 
     public static void play() {
         String description = "What is the result of the expression?";
@@ -17,26 +17,22 @@ public class Calc {
             int number2 = random.nextInt(MAX_NUMBER);
             char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
             String question = number1 + " " + operation + " " + number2;
-            String correctAnswer;
-
-            switch (operation) {
-                case '+':
-                    correctAnswer = String.valueOf(number1 + number2);
-                    break;
-                case '-':
-                    correctAnswer = String.valueOf(number1 - number2);
-                    break;
-                case '*':
-                    correctAnswer = String.valueOf(number1 * number2);
-                    break;
-                default:
-                    throw new IllegalArgumentException("Unknown operation: " + operation);
-            }
+            String correctAnswer = calculateAnswer(number1, number2, operation);
 
             roundsData[i][0] = question;
             roundsData[i][1] = correctAnswer;
         }
 
         Engine.run(description, roundsData);
+    }
+
+    // Логика определения верного ответа вынесена в отдельный метод
+    private static String calculateAnswer(int number1, int number2, char operation) {
+        return switch (operation) {
+            case '+' -> String.valueOf(number1 + number2);
+            case '-' -> String.valueOf(number1 - number2);
+            case '*' -> String.valueOf(number1 * number2);
+            default -> throw new IllegalArgumentException("Unknown operation: " + operation);
+        };
     }
 }

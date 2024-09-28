@@ -1,7 +1,6 @@
 import org.gradle.kotlin.dsl.dependencies as dependencies1
 plugins {
     application
-    id("java")
     id("checkstyle")
 }
 group = "hexlet.code"

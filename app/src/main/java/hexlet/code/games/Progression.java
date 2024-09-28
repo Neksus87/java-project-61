@@ -7,6 +7,11 @@ public class Progression {
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
 
+    // Логика определения верного ответа вынесена в отдельный метод
+    private static int calculateMissingValue(int start, int step, int missingIndex) {
+        return start + step * missingIndex;
+    }
+
     public static void play() {
         String description = "What number is missing in the progression?";
         String[][] roundsData = new String[Engine.ROUNDS][2];
@@ -20,15 +25,15 @@ public class Progression {
             int missingIndex = random.nextInt(length);
 
             StringBuilder progression = new StringBuilder();
-            int correctAnswer = 0;
             for (int j = 0; j < length; j++) {
                 if (j == missingIndex) {
                     progression.append(".. ");
-                    correctAnswer = start + step * j;
                 } else {
                     progression.append(start + step * j).append(" ");
                 }
             }
+
+            int correctAnswer = calculateMissingValue(start, step, missingIndex);
 
             roundsData[i][0] = progression.toString().trim();
             roundsData[i][1] = Integer.toString(correctAnswer);

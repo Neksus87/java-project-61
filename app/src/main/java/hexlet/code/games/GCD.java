@@ -23,6 +23,7 @@ public class GCD {
         Engine.run(description, roundsData);
     }
 
+    // Логика определения верного ответа вынесена в отдельный метод
     private static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;

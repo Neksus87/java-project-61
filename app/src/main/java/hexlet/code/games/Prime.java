@@ -19,6 +19,7 @@ public class Prime {
         Engine.run(description, roundsData);
     }
 
+    // Логика определения верного ответа вынесена в отдельный метод
     private static boolean isPrime(int number) {
         if (number < 2) {
             return false;
