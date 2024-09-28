@@ -23,7 +23,7 @@ public class App {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                System.out.println("Hello!");
+                Engine.greet();
                 break;
             case 2:
                 Even.play();
