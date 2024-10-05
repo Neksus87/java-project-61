@@ -5,16 +5,6 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUNDS = 3;
 
-    // Новый метод greet
-    public static void greet() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String playerName = scanner.next();
-        System.out.println("Hello, " + playerName + "!");
-    }
-
     public static void run(String description, String[][] roundsData) {
         Scanner scanner = new Scanner(System.in);
 

@@ -32,7 +32,7 @@ public class App {
         switch (choice) {
             case GREET:
                 System.out.println("Hello!");
-                Engine.greet();
+                Cli.greet();
                 break;
             case EVEN:
                 Even.play();

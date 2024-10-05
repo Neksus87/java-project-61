@@ -17,7 +17,7 @@ public class Calc {
             int number2 = random.nextInt(MAX_NUMBER);
             char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
             String question = number1 + " " + operation + " " + number2;
-            String correctAnswer = calculateAnswer(number1, number2, operation);
+            String correctAnswer = calculate(number1, number2, operation);
 
             roundsData[i][0] = question;
             roundsData[i][1] = correctAnswer;
@@ -27,7 +27,7 @@ public class Calc {
     }
 
     // Логика определения верного ответа вынесена в отдельный метод
-    private static String calculateAnswer(int number1, int number2, char operation) {
+    private static String calculate(int number1, int number2, char operation) {
         return switch (operation) {
             case '+' -> String.valueOf(number1 + number2);
             case '-' -> String.valueOf(number1 - number2);
